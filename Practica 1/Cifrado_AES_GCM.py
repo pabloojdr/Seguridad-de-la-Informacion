@@ -20,6 +20,7 @@ cipher = AES.new(key, AES.MODE_GCM, nonce = nonce, mac_len = mac_size)
 # Ciframos haciendo que la variable data sea múltiplo del tamaño de bloque
 ciphertext, mac_cifrado = cipher.encrypt_and_digest(pad(data, BLOCK_SIZE_AES))
 print("Mensaje cifrado con AES-GCM:", ciphertext)
+print("MAC obtenido: ", mac_cifrado)
 
 # ---- DESCIFRADO ----
 try:
